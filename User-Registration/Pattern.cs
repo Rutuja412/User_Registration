@@ -53,6 +53,28 @@ namespace User_Registration
                 Console.WriteLine("Invalid");
 
         }
+        string PASSWORD_RULE2 = "^[A-Z]{8}$";
+        public void passwordRule2()
+        {
+            string input = Console.ReadLine();
+            if (Regex.IsMatch(input, PASSWORD_RULE2))
+                Console.WriteLine("Valid Password for Rule2 : " + input);
+            else
+                Console.WriteLine("Invalid");
+
+        }
+        string PASSWORD_RULE3 = "^[A-Z]{1}[a-z]{2}[0-9]{3}$";//Abc123
+        public void passwordRule3()
+        {
+            string input = Console.ReadLine();
+            if (Regex.IsMatch(input, PASSWORD_RULE3))
+                Console.WriteLine("Valid Password for Rule3 : " + input);
+            else
+                Console.WriteLine("Invalid");
+
+        }
+
+
     }
 }
 
