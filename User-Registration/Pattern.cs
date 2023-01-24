@@ -16,6 +16,15 @@ namespace User_Registration
             else
                 Console.WriteLine("Invalid");
         }
+        string LAST_NAME = "^[A-Z][a-z]{4}$";
+        public void LastName()
+        {
+            string input = Console.ReadLine();
+            if (Regex.IsMatch(input, LAST_NAME))
+                Console.WriteLine("Last Name : " + input);
+            else
+                Console.WriteLine("Invalid");
+        }
     }
 }
 
