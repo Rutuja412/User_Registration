@@ -25,6 +25,15 @@ namespace User_Registration
             else
                 Console.WriteLine("Invalid");
         }
+        string EMAIL_ID = "^[a-z]{7}[0-9]{3}[@][a-z]{5}[.][a-z]{3}$"; //abcdefg589@gmail.com
+        public void ValidEmail()
+        {
+            string input = Console.ReadLine();
+            if (Regex.IsMatch(input, EMAIL_ID))
+                Console.WriteLine("Valid Email id - " + input);
+            else
+                Console.WriteLine("Invalid");
+        }
     }
 }
 

@@ -8,7 +8,7 @@ namespace User_Registration
         {
             Console.WriteLine("Welcome To User Registration");
             Console.WriteLine("Enter your choice");
-            Console.WriteLine("1. Enter First Name\n2. Enter Last Name\n3. Exit");
+            Console.WriteLine("1. Enter First Name\n2. Enter Last Name\n3. Enter Email ID\n4.Exit");
             int condition = Convert.ToInt32(Console.ReadLine());
             Pattern pattern = new Pattern();
             switch (condition)
@@ -20,6 +20,10 @@ namespace User_Registration
                     case 2:
                     Console.WriteLine("Enter Last Name: ");
                     pattern.LastName();
+                    break;
+                case 3:
+                    Console.WriteLine("Enter Email ID - ");
+                    pattern.ValidEmail();
                     break;
                 default:
                     Console.WriteLine("Enter Correct Option!!!");
