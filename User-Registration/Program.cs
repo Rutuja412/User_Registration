@@ -8,7 +8,7 @@ namespace User_Registration
         {
             Console.WriteLine("Welcome To User Registration");
             Console.WriteLine("Enter your choice");
-            Console.WriteLine("1. Enter First Name\n2. Enter Last Name\n3. Enter Email ID\n4. Enter Mobile Number\n5.Exit");
+            Console.WriteLine("1. Enter First Name\n2. Enter Last Name\n3. Enter Email ID\n4. Enter Mobile Number\n5.Password Rule1\n6.Exit");
             int condition = Convert.ToInt32(Console.ReadLine());
             Pattern pattern = new Pattern();
             switch (condition)
@@ -28,6 +28,10 @@ namespace User_Registration
                 case 4:
                     Console.WriteLine("Enter Mobile Number: ");
                     pattern.MobileNumber();
+                    break;
+                    case 5:
+                    Console.WriteLine("Enter Password for rule 1:");
+                    pattern.passwordRule1();
                     break;
                 default:
                     Console.WriteLine("Enter Correct Option!!!");

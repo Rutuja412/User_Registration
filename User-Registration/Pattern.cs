@@ -43,6 +43,16 @@ namespace User_Registration
             else
                 Console.WriteLine("Invalid");
         }
+        string PASSWORD_RULE1 = "^[a-z]{8}$";//minimum 8 chara
+        public void passwordRule1()
+        {
+            string input= Console.ReadLine();
+            if (Regex.IsMatch(input, PASSWORD_RULE1))
+                Console.WriteLine("Valid Password for Rule1 : " + input);
+            else
+                Console.WriteLine("Invalid");
+
+        }
     }
 }
 
