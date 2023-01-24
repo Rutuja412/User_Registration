@@ -73,7 +73,16 @@ namespace User_Registration
                 Console.WriteLine("Invalid");
 
         }
+        string PASSWORD_RULE4 = "^[A-Z]{1,}[a-z]{1,}[!@#$&]{1}[0-9]{1,}$";//Ab@3
+        public void passwordRule4()
+        {
+            string input = Console.ReadLine();
+            if (Regex.IsMatch(input, PASSWORD_RULE4))
+                Console.WriteLine("Valid Password for Rule4 : " + input);
+            else
+                Console.WriteLine("Invalid");
 
+        }
 
     }
 }
