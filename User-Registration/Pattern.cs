@@ -34,6 +34,15 @@ namespace User_Registration
             else
                 Console.WriteLine("Invalid");
         }
+        string MOBILE_NUMBER = "^[+][0-9]{2}[0-9]{10}$";
+        public void MobileNumber()
+        {
+            string input = Console.ReadLine();
+            if (Regex.IsMatch(input, MOBILE_NUMBER))
+                Console.WriteLine("Valid Mobile Number : " + input);
+            else
+                Console.WriteLine("Invalid");
+        }
     }
 }
 
