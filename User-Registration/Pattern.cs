@@ -83,6 +83,20 @@ namespace User_Registration
                 Console.WriteLine("Invalid");
 
         }
+        string emailFormat = "[A-Za-z0-9](.[-+a-z0-9A-Z])+@[A-Za-z0-9]+.[a-z]{2,4}(.[a-z]{2,3})?$";
+        public void EmailSampleValidation()
+        {
+            Console.WriteLine("Enter Email Id");
+            string email = Console.ReadLine();
+
+            if (Regex.IsMatch(email, emailFormat))
+            {
+                Console.Write("Given Email ID is Valid \n");
+
+                Regex regex1 = new Regex(emailFormat);
+                Console.Write("Please Enter valid Email ID ");
+            }
+        }
 
     }
 }
