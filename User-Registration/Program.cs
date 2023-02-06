@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace User_Registration
 {
@@ -7,53 +8,50 @@ namespace User_Registration
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To User Registration");
-            Console.WriteLine("Enter your choice");
-            Console.WriteLine("1. Enter First Name\n2. Enter Last Name\n3. Enter Email ID\n4. Enter Mobile Number\n5.Password Rule1\n6.Password-Rule2 \n7.Password-Rule3\n8. Password-Rule4 \n9.Sample Email Verification \n10.Exit");
-            int condition = Convert.ToInt32(Console.ReadLine());
-            Pattern pattern = new Pattern();
-            switch (condition)
-            {
-                case 1:
-                    Console.WriteLine("Enter name:");
-                    pattern.FirstName();
-                    break;
-                    case 2:
-                    Console.WriteLine("Enter Last Name: ");
-                    pattern.LastName();
-                    break;
-                case 3:
-                    Console.WriteLine("Enter Email ID: ");
-                    pattern.ValidEmail();
-                    break;
-                case 4:
-                    Console.WriteLine("Enter Mobile Number: ");
-                    pattern.MobileNumber();
-                    break;
-                    case 5:
-                    Console.WriteLine("Enter Password for rule 1:");
-                    pattern.passwordRule1();
-                    break;
-                    case 6:
-                    Console.WriteLine("Enter Password For Rule 2:");
-                    pattern.passwordRule2();
-                    break;
-                    case 7:
-                    Console.WriteLine("Enter Password For Rule 3");
-                    pattern.passwordRule3();
-                    break;
-                    case 8:
-                    Console.WriteLine("Enter Password For Rule 4");
-                    pattern.passwordRule4();
-                    break;
-                case 9:
-                    Console.WriteLine("validation of emails");
-                    pattern.EmailSampleValidation();
-                    break;
-                default:
-                    Console.WriteLine("Enter Correct Option!!!");
-                    
-                    break;
-            }
+            
+            Pattern pat = new Pattern();
+           
+            Console.WriteLine("Enter the First Name: ");
+            string firstname = Console.ReadLine();
+            bool name = pat.Validate_FirstName(firstname);
+            Console.WriteLine(name);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Enter the Last Name: ");
+            string lastname = Console.ReadLine();
+            bool name1 = pat.Validate_LastName(lastname);
+            Console.WriteLine(name1);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Enter the Email Id: ");
+            string email = Console.ReadLine();
+            bool id = pat.Validate_Email(email);
+            Console.WriteLine(id);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Enter the Phone Number: ");
+            string phonenumber = Console.ReadLine();
+            bool num = pat.Validate_PhoneNumber(phonenumber);
+            Console.WriteLine(num);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Enter Password: ");
+            string password1 = Console.ReadLine();
+            bool pass1 = pat.Validate_Password1(password1);
+            Console.WriteLine(pass1);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Enter Password: ");
+            string password2 = Console.ReadLine();
+            bool pass2 = pat.Validate_Password2(password2);
+            Console.WriteLine(pass2);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Enter Password: ");
+            string password3 = Console.ReadLine();
+            bool pass3 = pat.Validate_Password3(password3);
+            Console.WriteLine(pass3);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Enter Password: ");
+            string password4 = Console.ReadLine();
+            bool pass4 = pat.Validate_Password4(password4);
+            Console.WriteLine(pass4);
+            Console.WriteLine("----------------------------------------");
+        }
         }
     }
-}
+

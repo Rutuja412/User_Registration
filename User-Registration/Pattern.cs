@@ -7,97 +7,133 @@ namespace User_Registration
 {
     internal class Pattern
     {
-         string FIRST_NAME = "^[A-Z][a-z]{5}$";
-        public void FirstName()
-        {
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, FIRST_NAME))
-                Console.WriteLine("First Name - " + input);
-            else
-                Console.WriteLine("Invalid");
-        }
-        string LAST_NAME = "^[A-Z][a-z]{4}$";
-        public void LastName()
-        {
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, LAST_NAME))
-                Console.WriteLine("Last Name : " + input);
-            else
-                Console.WriteLine("Invalid");
-        }
-        string EMAIL_ID = "^[a-z]{7}[0-9]{3}[@][a-z]{5}[.][a-z]{3}$"; //abcdefg589@gmail.com
-        public void ValidEmail()
-        {
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, EMAIL_ID))
-                Console.WriteLine("Valid Email id - " + input);
-            else
-                Console.WriteLine("Invalid");
-        }
-        string MOBILE_NUMBER = "^[+][0-9]{2}[0-9]{10}$";
-        public void MobileNumber()
-        {
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, MOBILE_NUMBER))
-                Console.WriteLine("Valid Mobile Number : " + input);
-            else
-                Console.WriteLine("Invalid");
-        }
-        string PASSWORD_RULE1 = "^[a-z]{8}$";//minimum 8 chara
-        public void passwordRule1()
-        {
-            string input= Console.ReadLine();
-            if (Regex.IsMatch(input, PASSWORD_RULE1))
-                Console.WriteLine("Valid Password for Rule1 : " + input);
-            else
-                Console.WriteLine("Invalid");
 
-        }
-        string PASSWORD_RULE2 = "^[A-Z]{8}$";
-        public void passwordRule2()
+        public static string REGEX_CODE = "^[A-Z]{1}[a-z]{4}$";
+        public bool Validate_FirstName(string firstname)
         {
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, PASSWORD_RULE2))
-                Console.WriteLine("Valid Password for Rule2 : " + input);
-            else
-                Console.WriteLine("Invalid");
-
+            return Regex.IsMatch(firstname, REGEX_CODE);
         }
-        string PASSWORD_RULE3 = "^[A-Z]{1}[a-z]{2}[0-9]{3}$";//Abc123
-        public void passwordRule3()
+        public static string REGEX_LASTNAMECODE = "^[A-Z]{}[a-z]{2}$";
+        public bool Validate_LastName(string lastname)
         {
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, PASSWORD_RULE3))
-                Console.WriteLine("Valid Password for Rule3 : " + input);
-            else
-                Console.WriteLine("Invalid");
-
+            return Regex.IsMatch(lastname, REGEX_LASTNAMECODE);
         }
-        string PASSWORD_RULE4 = "^[A-Z]{1,}[a-z]{1,}[!@#$&]{1}[0-9]{1,}$";//Ab@3
-        public void passwordRule4()
+        public static string REGEX_EMAILCODE = @"^([abc]+)(\.[a-z0-9_\+\-]+)?@([bl]+)\.([co]{2,4})(\.[a-z]{2})?$";
+        public bool Validate_Email(string email)
         {
-            string input = Console.ReadLine();
-            if (Regex.IsMatch(input, PASSWORD_RULE4))
-                Console.WriteLine("Valid Password for Rule4 : " + input);
-            else
-                Console.WriteLine("Invalid");
-
+            return Regex.IsMatch(email, REGEX_EMAILCODE);
         }
-        string emailFormat = "[A-Za-z0-9](.[-+a-z0-9A-Z])+@[A-Za-z0-9]+.[a-z]{2,4}(.[a-z]{2,3})?$";
-        public void EmailSampleValidation()
+        public static string REGEX_PHONECODE = "^+[1-9]{2}[: :][0-9]{10}$";
+        public bool Validate_PhoneNumber(string phonenumber)
         {
-            Console.WriteLine("Enter Email Id");
-            string email = Console.ReadLine();
-
-            if (Regex.IsMatch(email, emailFormat))
-            {
-                Console.Write("Given Email ID is Valid \n");
-
-                Regex regex1 = new Regex(emailFormat);
-                Console.Write("Please Enter valid Email ID ");
-            }
+            return Regex.IsMatch(phonenumber, REGEX_PHONECODE);
         }
-
+        public static string REGEX_PASSWORDCODE1 = "^[a-z]{8}$";
+        public bool Validate_Password1(string password)
+        {
+            return Regex.IsMatch(password, REGEX_PASSWORDCODE1);
+        }
+        public static string REGEX_PASSWORDCODE2 = "^[a-zA-Z]{8}$";
+        public bool Validate_Password2(string password)
+        {
+            return Regex.IsMatch(password, REGEX_PASSWORDCODE2);
+        }
+        public static string REGEX_PASSWORDCODE3 = "^[a-zA-Z0-9]{8}$";
+        public bool Validate_Password3(string password)
+        {
+            return Regex.IsMatch(password, REGEX_PASSWORDCODE3);
+        }
+        public static string PASSWORDCODE4 = @"^[a-zA-Z0-9]?[~`!@#$%^&*()-_+={}[]|\;:""<>,./?]{1,8}$";
+        public bool Validate_Password4(string password)
+        {
+            return Regex.IsMatch(password, PASSWORDCODE4);
+        }
+        public static string REGEX_EmailCODE1 = @"^([a-z]+)?@([a-z]+)\.([a-z\,]{2,})$";
+        public bool Validate_Email1(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE1);
+        }
+        public static string REGEX_EmailCODE2 = @"^([a-z0-9\-]+)?@([a-z]+)\.([a-z\,]{2,})$";
+        public bool Validate_Email2(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE2);
+        }
+        public static string REGEX_EmailCODE3 = @"^([a-z0-9\.]+)?@([a-z]+)\.([a-z\,]{2,})$";
+        public bool Validate_Email3(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE3);
+        }
+        public static string REGEX_EmailCODE4 = @"^([a-z0-9]+)?@([a-z]+)\.([a-z\,]{2,})$";
+        public bool Validate_Email4(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE4);
+        }
+        public static string REGEX_EmailCODE5 = @"^([a-z0-9\-]+)?@([a-z]+)\.([a-z\,]{2,})$";
+        public bool Validate_Email5(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE5);
+        }
+        public static string REGEX_EmailCODE6 = @"^([a-z]+)(\.[a-z0-9_\+\-]+)?@([a-z]+)\.([a-z]{2,4})(\.[a-z]{2})?$";
+        public bool Validate_Email6(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE6);
+        }
+        public static string REGEX_EmailCODE7 = @"^([a-z]+)?@([1]+)\.([a-z\,]{2,})$";
+        public bool Validate_Email7(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE7);
+        }
+        public static string REGEX_EmailCODE8 = @"^([a-z]+)?@([a-z]+)\.([a-z]{2,5})(\.[a-z]{3})?$";
+        public bool Validate_Email8(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE8);
+        }
+        public static string REGEX_EmailCODE9 = @"^([a-z0-9\+]+)?@([a-z]+)\.([a-z\,]{2,})$";
+        public bool Validate_Email9(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EmailCODE9);
+        }
     }
+    public class UserEntryValidationTest
+    {
+        public static string REGEX_CODE = "^[A-Z]{1}[a-z]{5}$";
+        public static string REGEX_LASTNAMECODE = "^[A-Z]{1}[a-z]{4}$";
+        public static string REGEX_EMAILCODE = @"^([abc]+)(\.[a-z0-9_\+\-]+)?@([bl]+)\.([co]{2,4})(\.[a-z]{2})?$";
+        public static string REGEX_PHONECODE = "^[+][0-9]{2}[0-9]{10}$";
+        public static string REGEX_PASSWORDCODE1 = "^[A-Z]{1}[a-z]{2}[0-9]{3}$";
+        public string ValidateFirstName(string firstname) =>
+            Regex.IsMatch(firstname, REGEX_CODE) ? "Rutuja" : "Last Name is not match";
+        public void ValidationFirstName(string firstname)
+        {
+            Console.WriteLine(Regex.IsMatch(firstname, REGEX_CODE));
+        }
+        public string ValidateLastName(string lastname) =>
+            Regex.IsMatch(lastname, REGEX_LASTNAMECODE) ? "Kadam" : "Last Name is not match";
+        public void ValidationLastName(string lastname)
+        {
+            Console.WriteLine(Regex.IsMatch(lastname, REGEX_LASTNAMECODE));
+        }
+        public string ValidateEmail(string email) =>
+            Regex.IsMatch(email, REGEX_EMAILCODE) ? "abc.xyz@bl.co.in" : "Email is not match";
+        public void ValidationEmail(string email)
+        {
+            Console.WriteLine(Regex.IsMatch(email, REGEX_EMAILCODE));
+        }
+        public string ValidatePhoneNumber(string phonenumber) =>
+            Regex.IsMatch(phonenumber, REGEX_PHONECODE) ? "+919945678956" : "Phonenumber is not match";
+        public void ValidationPhoneNumber(string phonenumber)
+        {
+            Console.WriteLine(Regex.IsMatch(phonenumber, REGEX_PHONECODE));
+        }
+        public string ValidatePassword1(string password) =>
+             Regex.IsMatch(password, REGEX_PASSWORDCODE1) ? "Abc123" : "Password is not match";
+        public void ValidationPassword(string password)
+        {
+            Console.WriteLine(Regex.IsMatch(password, REGEX_PASSWORDCODE1));
+        }
+    }
+
+
 }
+
 
